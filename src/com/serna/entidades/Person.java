@@ -2,10 +2,10 @@ package com.serna.entidades;
 
 public class Person {
 
-    private int code;
-    private String name;
-    private String lastName;
-    private String email;
+    private final int code;
+    private final String name;
+    private final String lastName;
+    private final String email;
 
     public static int counter = 1;
 

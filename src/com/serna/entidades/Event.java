@@ -1,10 +1,9 @@
 package com.serna.entidades;
 
-import com.serna.utils.MisConstantes;
 
-import java.time.LocalDate;
+import com.serna.utils.Locations;
+
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Event {
@@ -20,22 +19,17 @@ public class Event {
     private Float discount;
 
     private Float cost;
-    private String location;
+    private Locations location;
 
 
-    private static int counter =1;
 
 
-    public Event(String tittle, Exhibitor exhibitor, Double duration, LocalTime entryTime, LocalTime departureTime, Float cost) {
-        this.assistantList = new ArrayList<>();
-        this.code = counter++;
-        this.tittle = tittle;
-        this.exhibitor = exhibitor;
-        this.duration = duration;
-        this.entryTime = entryTime;
-        this.departureTime = departureTime;
-        this.cost = 3000F;
+    public Event(){}
+
+    public void setCode(int code){
+        this.code = code;
     }
+
 
     public String getTittle() {
         return tittle;
@@ -109,30 +103,21 @@ public class Event {
         this.cost = cost;
     }
 
-    public String getLocation() {
+    public Locations getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Locations location) {
         this.location = location;
     }
 
-
-   /* public static class eventbuilder{
-
-    }
 
     public void addAssistant(Assistant assistant){
         this.assistantList.add(assistant);
     }
 
     public Float costEvent(){
-        if (duration <= 5.0) {
-           this.cost = this.cost +  costLocation(location);
-        } else {
-            this.cost = this.cost + costLocation(location);
-        }
-        return cost;
+        return null;
     }
 
     public Float calculateAmount(){
@@ -142,9 +127,9 @@ public class Event {
 
 
     public Float discountEvent(String season){
-        if(season == MisConstantes.ALTA) {
+        if(season == "MisConstantes.ALTA") {
             this.discount = 0.10F;
-        }else if(season == MisConstantes.BAJA){
+        }else if(season == "MisConstantes.BAJA"){
             this.discount = 0.05F;
         }else {
             this.discount = 0F;
@@ -161,7 +146,7 @@ public class Event {
 //            cost = 4000F;
 //        }
         return cost;
-    }*/
+    }
 
     @Override
     public String toString() {
@@ -176,6 +161,7 @@ public class Event {
                 ", season='" + season + '\'' +
                 ", discount=" + discount +
                 ", cost=" + cost +
+                ", location='" + location + '\'' +
                 '}';
     }
 }

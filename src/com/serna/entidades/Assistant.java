@@ -1,5 +1,7 @@
 package com.serna.entidades;
 
+import com.serna.utils.Locations;
+
 public class Assistant extends Person{
 
     private String telephone;
@@ -26,13 +28,12 @@ public class Assistant extends Person{
         this.address = address;
     }
 
-    public void buyEvent(Event event, String location){
+    public void buyEvent(Event event, Locations location){
         event.setLocation(location);
         event.addAssistant(this);
         //this.setEvent(event);
     }
 
-    @Override
     public String toString() {
         return "Assistant{" +
                 super.toString() +
