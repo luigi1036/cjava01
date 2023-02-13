@@ -6,39 +6,43 @@ public class Assistant extends Person{
 
     private String telephone;
     private String address;
-
+    private String localityPurchased;
+    private  Double totalCost;
 
     public Assistant(String name, String lastName, String email) {
         super(name, lastName, email);
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getLocalityPurchased() {
+        return localityPurchased;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setLocalityPurchased(String localityPurchased) {
+        this.localityPurchased = localityPurchased;
     }
 
-    public String getAddress() {
-        return address;
+    public Double getTotalCost() {
+        return totalCost;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTotalCost(Double totalCost) {
+        this.totalCost = totalCost;
     }
 
     public void buyEvent(Event event, Locations location){
-        event.setLocation(location);
-        event.addAssistant(this);
-        //this.setEvent(event);
+        this.setLocalityPurchased(location.getDescripcion());
+       event.setLocation(location);
+       event.addAssistantList(this);
+       this.setTotalCost(event.costEvent());
     }
 
+    @Override
     public String toString() {
-        return "Assistant{" +
+        return
                 super.toString() +
                 "telephone='" + telephone + '\'' +
                 ", address='" + address + '\'' +
+                ", localityPurchased='" + localityPurchased + '\'' +
                 '}';
     }
 }

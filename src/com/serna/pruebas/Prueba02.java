@@ -1,22 +1,43 @@
 package com.serna.pruebas;
 
-import com.serna.entidades.Event;
-import com.serna.entidades.EventBuilder;
-import com.serna.utils.Locations;
 
+import com.serna.entidades.Event;
+import com.serna.utils.Events;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class Prueba02 {
 
     public static void main(String[] args) {
 
-        EventBuilder builder = new EventBuilder("Java");
-        EventBuilder builder2 = new EventBuilder("Java");
+        Events events = new Events();
+        Stream<Event> eventsPlatinum;
+        Stream<Event> eventsGodl;
+        Stream<Event> eventsVip;
 
-        Event event = builder.setLocation(Locations.P).setDuration(1.5).build();
-        Event evento = builder.setLocation(Locations.G).setCost(455F).build();
+        eventsPlatinum =  events.getEvents().stream().filter(e -> e.getLocation().getDescripcion().equals("Platinum"));
 
-        System.out.println(event);
-        System.out.println(evento);
+        eventsGodl =  events.getEvents().stream().filter(e -> e.getLocation().getDescripcion().equals("Gold"));
+
+
+        eventsVip =  events.getEvents().stream().filter(e -> e.getLocation().getDescripcion().equals("VIP"));
+
+        System.out.println("Eventos Platinum");
+        eventsPlatinum.forEach(e -> {
+            System.out.println(e.showInformationTwo());
+        });
+
+        System.out.println("Eventos Gold");
+        eventsGodl.forEach(e -> {
+            System.out.println(e.showInformationTwo());
+        });
+
+        System.out.println("Eventos VIP");
+        eventsVip.forEach(e -> {
+            System.out.println(e.showInformationTwo());
+        });
 
 
     }

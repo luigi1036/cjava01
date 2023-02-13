@@ -15,30 +15,11 @@ public class Person {
         this.lastName = lastName;
         this.email = email;
     }
-
-    public int getCode() {
-        return this.code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
     @Override
     public String toString() {
-        return "code=" + code +
+        return "{code=" + code +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'' + ", " ;
     }
 }

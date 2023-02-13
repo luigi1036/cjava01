@@ -9,4 +9,8 @@ public enum Locations {
     private Locations(String description){
         this.description= description;
     }
+
+    public String getDescripcion(){
+        return this.description;
+    }
 }
