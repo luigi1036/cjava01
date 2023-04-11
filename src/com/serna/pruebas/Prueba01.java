@@ -18,6 +18,8 @@ public class Prueba01 {
         Events events = new Events();
         Stream<Event> eventosOrganizados = events.getEvents().stream().sorted();
 
+        System.out.println("mi primer mensaje para el primer commit");
+
         eventosOrganizados
                 .forEach(e -> {
                     System.out.println(e.showInformation());
