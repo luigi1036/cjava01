@@ -26,6 +26,8 @@ public class Prueba01 {
                 .forEach(e -> {
                     System.out.println(e.showInformation());
                 });
+
+        System.out.println("segunda prueba de commit");
     }
 
 
